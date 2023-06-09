@@ -1,7 +1,7 @@
-import { Owner } from "../models/owner.model";
-import { Vehicle } from "../models/vehicle.model";
-import { VehicleOwner } from "../models/vehicleOwner.model";
-import { createSuccessResponse, notFoundResponse, successResponse } from "../utils/api.response";
+import { Owner } from "../models/owner.model.js";
+import { Vehicle } from "../models/vehicle.model.js";
+import { VehicleOwner } from "../models/vehicleOwner.model.js";
+import { createSuccessResponse, notFoundResponse, successResponse } from "../utils/api.response.js";
 
 export const assignVehicleToOwner = async (req, res) => {
   try {

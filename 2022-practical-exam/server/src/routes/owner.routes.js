@@ -1,5 +1,4 @@
 import express from 'express'
-import authenticate from '../middlewares/auth.middleware.js'
 import { getOwners, registerOwner } from '../controllers/owner.controller.js'
 import { validateOwnerRegistration } from '../validators/owner.validator.js'
 const router = express.Router()

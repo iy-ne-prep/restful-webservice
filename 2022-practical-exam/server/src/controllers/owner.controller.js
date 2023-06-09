@@ -1,5 +1,5 @@
-import { Owner } from "../models/owner.model";
-import { successResponse } from "../utils/api.response";
+import { Owner } from "../models/owner.model.js";
+import { successResponse } from "../utils/api.response.js";
 
 export const registerOwner = async (req, res) => {
   try {

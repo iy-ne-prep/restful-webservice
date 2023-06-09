@@ -1,5 +1,5 @@
-import { Vehicle } from "../models/vehicle.model";
-import { createSuccessResponse, successResponse } from "../utils/api.response";
+import { Vehicle } from "../models/vehicle.model.js";
+import { createSuccessResponse, successResponse } from "../utils/api.response.js";
 
 export const registerVehicle = async (req, res) => {
   try {
