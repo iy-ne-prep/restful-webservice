@@ -191,6 +191,18 @@
                 "produces": [
                     "application/json"
                 ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "page",
+                        "type": "number"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "type": "number"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Success"
@@ -335,6 +347,18 @@
                 "produces": [
                     "application/json"
                 ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "page",
+                        "type": "number"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "type": "number"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Success"
@@ -362,6 +386,18 @@
                 ],
                 "produces": [
                     "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "page",
+                        "type": "number"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "type": "number"
+                    }
                 ],
                 "responses": {
                     "200": {

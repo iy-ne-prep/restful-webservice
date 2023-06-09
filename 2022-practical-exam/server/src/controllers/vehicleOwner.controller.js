@@ -48,11 +48,23 @@ export const assignVehicleToOwner = async (req, res) => {
 
 export const getVehicleOwners = async (req, res) => {
   try {
-    let vehicleOwners = await VehicleOwner.find({})
+    const options = {
+      page: parseInt(req.query.page) || 1,
+      limit: parseInt(req.query.limit) || 5,
+    };
+
+    const { docs, totalPages, totalDocs } = await VehicleOwner.paginate({}, options)
     .populate('owner')
     .populate('vehicle');
 
-    return successResponse("Vehicle Owners", vehicleOwners, res);
+    const returnObject = {
+      data: docs,
+      currentPage: options.page,
+      totalPages: totalPages,
+      totalData: totalDocs,
+    };
+
+    return successResponse("Vehicle-Owners", returnObject, res);
   } catch (ex) {
     return serverErrorResponse(ex, res);
   }

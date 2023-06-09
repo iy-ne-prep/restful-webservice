@@ -47,9 +47,22 @@ export const registerVehicle = async (req, res) => {
 
 export const getVehicles = async (req, res) => {
   try {
-    let vehicles = await Vehicle.find({});
 
-    return successResponse("Vehicles", vehicles, res);
+    const options = {
+      page: parseInt(req.query.page) || 1,
+      limit: parseInt(req.query.limit) || 5
+    }
+
+    const {docs,totalPages,totalDocs} = await Vehicle.paginate({},options)
+
+    let returnObject = {
+      data: docs,
+      currentPage: options.page,
+      totalPages,
+      totalData: totalDocs
+    }
+
+    return successResponse("Vehicles", returnObject, res);
   } catch (ex) {
     return serverErrorResponse(ex, res);
   }
