@@ -1,5 +1,6 @@
 import mongoose from "mongoose"
 const { Schema, model }= mongoose
+import mongoosePaginate from 'mongoose-paginate-v2';
 
 const vehicleOwnerSchema = new Schema({
     owner:{
@@ -19,5 +20,7 @@ const vehicleOwnerSchema = new Schema({
 },
 {timestamps:true}
 )
+
+vehicleOwnerSchema.plugin(mongoosePaginate);
 
 export const VehicleOwner = model('vehicle_owner',vehicleOwnerSchema)

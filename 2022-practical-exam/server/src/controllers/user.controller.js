@@ -1,6 +1,6 @@
 import { compare, genSalt, hash } from "bcrypt";
 import { User } from "../models/user.model.js";
-import { createSuccessResponse, errorResponse, notFoundResponse, serverErrorResponse, successResponse } from "../utils/api.response.js";
+import { createSuccessResponse, errorResponse, serverErrorResponse, successResponse } from "../utils/api.response.js";
 import _ from "lodash";
 
 export const registerAsAdmin = async (req, res) => {

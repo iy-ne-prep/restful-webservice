@@ -1,5 +1,6 @@
+import _ from "lodash";
 import { Owner } from "../models/owner.model.js";
-import { createSuccessResponse, successResponse } from "../utils/api.response.js";
+import { createSuccessResponse, errorResponse, serverErrorResponse, successResponse } from "../utils/api.response.js";
 
 export const registerOwner = async (req, res) => {
   try {

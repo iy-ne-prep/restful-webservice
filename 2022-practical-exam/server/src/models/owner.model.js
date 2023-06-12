@@ -1,5 +1,6 @@
 import mongoose from "mongoose"
 const { Schema, model }= mongoose
+import mongoosePaginate from 'mongoose-paginate-v2';
 
 const ownerSchema = new Schema({
     firstname:{
@@ -30,5 +31,7 @@ const ownerSchema = new Schema({
 },
 {timestamps:true}
 )
+ownerSchema.plugin(mongoosePaginate);
+
 
 export const Owner = model('owner',ownerSchema)

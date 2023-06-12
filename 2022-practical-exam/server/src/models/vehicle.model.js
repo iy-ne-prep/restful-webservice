@@ -1,5 +1,6 @@
 import mongoose from "mongoose"
 const { Schema, model }= mongoose
+import mongoosePaginate from 'mongoose-paginate-v2';
 
 const vehicleSchema = new Schema({
     chasisNumber:{
@@ -21,11 +22,11 @@ const vehicleSchema = new Schema({
     },
     modelName:{
         type:String,
-        required: true,
-        unique: true
+        required: true
     }
 },
 {timestamps:true}
 )
+vehicleSchema.plugin(mongoosePaginate);
 
 export const Vehicle = model('vehicle',vehicleSchema)

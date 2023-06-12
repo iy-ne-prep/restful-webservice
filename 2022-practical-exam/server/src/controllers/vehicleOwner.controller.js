@@ -1,18 +1,24 @@
+import _ from "lodash";
 import { Owner } from "../models/owner.model.js";
 import { Vehicle } from "../models/vehicle.model.js";
 import { VehicleOwner } from "../models/vehicleOwner.model.js";
-import { createSuccessResponse, notFoundResponse, successResponse } from "../utils/api.response.js";
+import {
+  createSuccessResponse,
+  errorResponse,
+  notFoundResponse,
+  serverErrorResponse,
+  successResponse,
+} from "../utils/api.response.js";
 
 export const assignVehicleToOwner = async (req, res) => {
   try {
+    let { ownerId, vehicleId } = req.params;
 
-    let {ownerId,vehicleId} = req.params
+    let owner = await Owner.findById(ownerId);
+    if (!owner) return notFoundResponse("id", ownerId, "Owner", res);
 
-    let owner = await Owner.findById(ownerId)
-    if(!owner) return notFoundResponse("id",ownerId,"Owner",res)
-
-    let vehicle = await Vehicle.findById(vehicleId)
-    if(!vehicle) return notFoundResponse("id",vehicleId,"Vehicle",res)
+    let vehicle = await Vehicle.findById(vehicleId);
+    if (!vehicle) return notFoundResponse("id", vehicleId, "Vehicle", res);
 
     let checkPlateNumber = await VehicleOwner.findOne({
       plateNumber: req.body.plateNumber,
@@ -23,14 +29,10 @@ export const assignVehicleToOwner = async (req, res) => {
         res
       );
 
-    let vehicleOwner = new VehicleOwner(
-      _.pick(req.body, [
-        "plateNumber"
-      ])
-    )
-    vehicleOwner.owner = ownerId
-    vehicleOwner.vehicle = vehicleId
-    
+    let vehicleOwner = new VehicleOwner(_.pick(req.body, ["plateNumber"]));
+    vehicleOwner.owner = ownerId;
+    vehicleOwner.vehicle = vehicleId;
+
     try {
       await vehicleOwner.save();
       return createSuccessResponse(
@@ -53,9 +55,13 @@ export const getVehicleOwners = async (req, res) => {
       limit: parseInt(req.query.limit) || 5,
     };
 
-    const { docs, totalPages, totalDocs } = await VehicleOwner.paginate({}, options)
-    .populate('owner')
-    .populate('vehicle');
+    const { docs, totalPages, totalDocs } = await VehicleOwner.paginate(
+      {},
+      options
+    );
+    await VehicleOwner.populate(docs, { path: "owner" });
+
+    await VehicleOwner.populate(docs, { path: "vehicle" });
 
     const returnObject = {
       data: docs,

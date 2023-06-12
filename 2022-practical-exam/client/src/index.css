@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0 0%;
+  box-sizing: border-box;
+  font-family: 'poppins';
+}
+
+button {
+  background-color: rgb(34, 114, 195) !important;
+}
+
+button:hover {
+  background-color: rgb(24, 99, 173) !important;
+}
+
+.app {
+  display: flex;
+}
+
+.app-content {
+  margin-left: 20% !important;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-content>h2 {
+  margin-top: 5%;
+  text-align: center !important;
+  font-weight: bolder;
+  font-size: 25px;
+  color: rgb(34, 114, 195);
+  text-transform: uppercase;
+}
+
+
+/* tables */
+.table-container {
+  width: 80% !important;
+  margin: 1% 10% 2% !important;
+}
+
+.table {
+  border-collapse: collapse;
+  min-width: 100%;
+  width: max-content;
+}
+
+.horizontal-scroll::-webkit-scrollbar,
+.table-container::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-track,
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb:horizontal,
+.table-container::-webkit-scrollbar-thumb:horizontal {
+  background: #888;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb:horizontal:hover,
+.table-container::-webkit-scrollbar-thumb:horizontal:hover {
+  background: #555;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px 8px !important;
+  font-size: 13px;
+}
+
+.table th.center,
+.table td.center {
+  text-align: center;
+}
+
+.table tr:nth-child(even) {
+  background: rgba(183, 185, 187, 0.08);
+  width: 100%;
+  color: #727272;
+}
+
+.table .space {
+  height: 0.5rem;
+  width: 100%;
+  background-color: #fff;
+}
+
+.table th {
+  background: rgb(232, 240, 248);
+  color: rgb(34, 114, 195);
+}
+
+@media screen and (max-width: 992px) {
+  .table-container {
+    width: 100% !important;
+    padding: 0% 2% !important;
+    margin: 3% 1% !important;
+  }
+
+  .table {
+    width: max-content;
+    min-width: 100%;
+  }
+}
+
+/* Table Pagination */
+
+.table-pagination {
+  display: flex !important;
+}
+
+.table-pagination .pagination-item {
+  background: #eaeaea !important;
+  border-radius: 50% !important;
+  width: 28px !important;
+  height: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.3rem !important;
+  font-weight: bold !important;
+  color: #868585 !important;
+  cursor: pointer !important;
+}
+
+.table-pagination .pagination-item.active {
+  background: rgb(34, 114, 195) !important;
+  color: #fff !important;
+}
+
+.table-pagination .pagination-item p {
+  font-size: 13px !important;
+}

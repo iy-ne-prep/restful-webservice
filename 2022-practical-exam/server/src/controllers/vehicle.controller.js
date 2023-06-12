@@ -1,5 +1,6 @@
+import _ from "lodash";
 import { Vehicle } from "../models/vehicle.model.js";
-import { createSuccessResponse, successResponse } from "../utils/api.response.js";
+import { createSuccessResponse, errorResponse, serverErrorResponse, successResponse } from "../utils/api.response.js";
 
 export const registerVehicle = async (req, res) => {
   try {
@@ -9,15 +10,6 @@ export const registerVehicle = async (req, res) => {
     if (checkChasisNumber)
       return errorResponse(
         `Vehicle with chasis Number${req.body.chasisNumber} is already registered!`,
-        res
-      );
-
-    let checkModelName = await Vehicle.findOne({
-      modelName: req.body.modelName,
-    });
-    if (checkModelName)
-      return errorResponse(
-        `Vehicle with model name ${req.body.modelName} is already registered!`,
         res
       );
 

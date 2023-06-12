@@ -36,7 +36,7 @@
     "securityDefinitions": {
         "Bearer": {
             "type": "apiKey",
-            "name": "Authorization",
+            "name": "auth-token",
             "in": "header",
             "bearerFormat": "JWT",
             "scheme": "bearer"
@@ -432,15 +432,13 @@
                         "in": "path",
                         "name": "vehicleId",
                         "type": "string",
-                        "required": true,
-                        "format": "uuid"
+                        "required": true
                     },
                     {
                         "in": "path",
                         "name": "ownerId",
                         "type": "string",
-                        "required": true,
-                        "format": "uuid"
+                        "required": true
                     },
                     {
                         "in": "body",

@@ -1,5 +1,5 @@
 export function corsFunction(req, res, next){
-    const allowedOrigins = ['http://localhost:3000/'];
+    const allowedOrigins = ['http://localhost:5173'];
     const origin = req.headers.origin;
     if (allowedOrigins.indexOf(origin) >= 0) {
         res.setHeader('Access-Control-Allow-Origin', origin);
