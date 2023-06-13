@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { errorToast, successToast } from "../utils/Toast";
-import { ToastContainer } from "react-toastify";
 import { Input } from "../components/Input";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -73,7 +72,6 @@ export const SignUp = () => {
 
   return (
     <div className="pb-12">
-      <ToastContainer />
       <h1 className="text-xl text-[#092468] font-black text-center my-12">
         Vehicle Tracking System
       </h1>
@@ -86,7 +84,7 @@ export const SignUp = () => {
           <div className="mb-6">
             <Input
               type="text"
-              id="firstname"
+              name="firstname"
               placeholder="First name"
               defaultInputValue={formData.firstname || ""}
               onChange={handleChange}
@@ -95,7 +93,7 @@ export const SignUp = () => {
           <div className="mb-6">
             <Input
               type="text"
-              id="lastname"
+              name="lastname"
               placeholder="Last name"
               defaultInputValue={formData.lastname || ""}
               onChange={handleChange}
@@ -104,7 +102,7 @@ export const SignUp = () => {
           <div className="mb-6">
             <Input
               type="email"
-              id="email"
+              name="email"
               placeholder="Email"
               defaultInputValue={formData.email || ""}
               onChange={handleChange}
@@ -113,7 +111,7 @@ export const SignUp = () => {
           <div className="mb-6">
             <Input
               type="text"
-              id="nationalId"
+              name="nationalId"
               placeholder="National Id"
               defaultInputValue={formData.nationalId || ""}
               onChange={handleChange}
@@ -122,7 +120,7 @@ export const SignUp = () => {
           <div className="mb-6">
             <Input
               type="tel"
-              id="phone"
+              name="phone"
               placeholder="Phone"
               defaultInputValue={formData.phone || ""}
               onChange={handleChange}
@@ -131,7 +129,7 @@ export const SignUp = () => {
           <div className="mb-8">
             <Input
               type="password"
-              id="password"
+              name="password"
               placeholder="Password"
               defaultInputValue={formData.password || ""}
               onChange={handleChange}

@@ -7,10 +7,12 @@ import { PrivateRoute, PublicRoute } from "./utils/Route";
 import { Owners } from "./pages/Owners";
 import { VehicleOwnership } from "./pages/VehicleOwnership";
 import { Logout } from "./pages/Logout";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <>
+      <ToastContainer />
       <Router>
         <Routes>
           <Route path="/" exact element={<PublicRoute element={Login} />} />

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { errorToast, successToast } from "../utils/Toast";
-import { ToastContainer } from "react-toastify";
 import { Input } from "../components/Input";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -55,16 +54,15 @@ export const Login = () => {
   };
 
   const handleChange = (e) => {
-    const { id, value } = e.target;
+    const { name, value } = e.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [id]: value,
+      [name]: value,
     }));
   };
 
   return (
     <div className="pb-12">
-      <ToastContainer />
       <h1 className="text-xl text-[#092468] font-black text-center my-12">
         Vehicle Tracking System
       </h1>
@@ -77,7 +75,7 @@ export const Login = () => {
           <div className="mb-6">
             <Input
               type="email"
-              id="email"
+              name="email"
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
@@ -86,7 +84,7 @@ export const Login = () => {
           <div className="mb-8">
             <Input
               type="password"
-              id="password"
+              name="password"
               placeholder="Password"
               value={formData.password}
               onChange={handleChange}

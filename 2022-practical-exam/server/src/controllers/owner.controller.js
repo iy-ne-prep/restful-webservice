@@ -55,3 +55,13 @@ export const getOwners = async (req, res) => {
     return serverErrorResponse(ex, res);
   }
 };
+
+export const getAllOwners = async (req, res) => {
+  try {
+    let owners = await Owner.find()
+
+    return successResponse("Owners", owners, res);
+  } catch (ex) {
+    return serverErrorResponse(ex, res);
+  }
+};

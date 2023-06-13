@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./sidebar.scss";
 import { AiOutlineCar, AiOutlineUserAdd, AiOutlineHome,AiOutlineLogout } from "react-icons/ai";
+import { API_URL, sendRequest } from "../../utils/Api";
 
 const sidebarNavItems = [
   {
@@ -30,6 +31,7 @@ const Sidebar = () => {
   const sidebarRef = useRef();
   const indicatorRef = useRef();
   const location = useLocation();
+  const [profile,setProfile] = useState();
 
   useEffect(() => {
     setTimeout(() => {
@@ -40,6 +42,15 @@ const Sidebar = () => {
       setStepHeight(sidebarItem.clientHeight);
     }, 50);
   }, []);
+
+  useEffect(()=>{
+    async function loadData(){
+      let response = await sendRequest(API_URL+"/users/profile","GET");
+      setProfile(response?.data?.data)
+      console.warn(profile)
+    }
+    loadData()
+  },[])
 
   // change active index
   useEffect(() => {
@@ -53,6 +64,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar__logo">Vehicle Tracking System</div>
+      <div className="sidebar__sublogo">{`Welcome ${profile?.firstname + " "+profile?.lastname}`}</div>
       <div ref={sidebarRef} className="sidebar__menu">
         <div
           ref={indicatorRef}

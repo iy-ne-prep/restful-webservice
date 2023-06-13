@@ -59,3 +59,15 @@ export const getVehicles = async (req, res) => {
     return serverErrorResponse(ex, res);
   }
 };
+
+
+export const getAllVehicles = async (req, res) => {
+  try {
+
+    let vehicles = await Vehicle.find();
+
+    return successResponse("Vehicles", vehicles, res);
+  } catch (ex) {
+    return serverErrorResponse(ex, res);
+  }
+};

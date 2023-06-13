@@ -219,6 +219,34 @@
                 }
             }
         },
+        "/owners/all": {
+            "get": {
+                "tags": [
+                    "OWNER OPERATIONS"
+                ],
+                "summary": "Get All Car Owners",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Invalid data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
         "/owners/register": {
             "post": {
                 "tags": [
@@ -358,6 +386,34 @@
                         "name": "limit",
                         "type": "number"
                     }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Invalid data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/vehicles/all": {
+            "get": {
+                "tags": [
+                    "VEHICLE OPERATIONS"
+                ],
+                "summary": "Get All Vehicles",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
                 ],
                 "responses": {
                     "200": {
