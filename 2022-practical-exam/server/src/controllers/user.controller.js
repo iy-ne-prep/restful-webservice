@@ -43,7 +43,7 @@ export const registerAsAdmin = async (req, res) => {
 
 export const login = async(req,res)=>{
     try{
-        let user = await User.findOne({ email: req.body.email }).select("password");
+        let user = await User.findOne({ email: req.body.email }).select("_id role password");
         if (!user) return errorResponse("Invalid email or password!",res);
 
         const validPassword = await compare(req.body.password, user.password);

@@ -23,6 +23,16 @@ export const createSuccessResponse = (
   });
 };
 
+export const unauthorizedResponse = (
+  message,
+  res
+) => {
+  return res.status(201).json({
+    status: 401,
+    message: message
+  });
+};
+
 export const errorResponse = (message, res) => {
   return res.status(400).json({
     status: 400,
