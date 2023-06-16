@@ -12,7 +12,7 @@ body {
   margin: 0;
   padding: 0 0%;
   box-sizing: border-box;
-  font-family: 'poppins';
+  font-family: 'Poppins', sans-serif;
 }
 
 button {
@@ -36,7 +36,7 @@ button:hover {
   align-items: center;
 }
 
-.app-content>h2 {
+.app-content > h2 {
   margin-top: 5%;
   text-align: center !important;
   font-weight: bolder;
@@ -45,38 +45,24 @@ button:hover {
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 768px) {
+  .app-content {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+}
 
 /* tables */
 .table-container {
   width: 80% !important;
   margin: 1% 10% 2% !important;
+  overflow-x: auto;
 }
 
 .table {
   border-collapse: collapse;
   min-width: 100%;
   width: max-content;
-}
-
-.horizontal-scroll::-webkit-scrollbar,
-.table-container::-webkit-scrollbar {
-  width: 2px;
-  height: 2px;
-}
-
-.horizontal-scroll::-webkit-scrollbar-track,
-.table-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.horizontal-scroll::-webkit-scrollbar-thumb:horizontal,
-.table-container::-webkit-scrollbar-thumb:horizontal {
-  background: #888;
-}
-
-.horizontal-scroll::-webkit-scrollbar-thumb:horizontal:hover,
-.table-container::-webkit-scrollbar-thumb:horizontal:hover {
-  background: #555;
 }
 
 .table th,
@@ -106,19 +92,6 @@ button:hover {
 .table th {
   background: rgb(232, 240, 248);
   color: rgb(34, 114, 195);
-}
-
-@media screen and (max-width: 992px) {
-  .table-container {
-    width: 100% !important;
-    padding: 0% 2% !important;
-    margin: 3% 1% !important;
-  }
-
-  .table {
-    width: max-content;
-    min-width: 100%;
-  }
 }
 
 /* Table Pagination */
@@ -176,7 +149,7 @@ button:hover {
   height: 2.4rem;
 }
 
-.form-holder{
+.form-holder {
   width: 30%;
 }
 
@@ -185,7 +158,6 @@ button:hover {
   border-radius: 20px 20px 0px 0px;
   padding: 1rem 2rem;
 }
-
 
 .form-holder .form-content {
   width: 100%;
@@ -260,12 +232,26 @@ label {
 }
 
 @media screen and (max-width: 992px) {
+  .table-container {
+    width: 100% !important;
+    padding: 0% 2% !important;
+    margin: 3% 1% !important;
+  }
 
-  .form-holder {
+  .table {
+    width: max-content;
+    min-width: 100%;
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .app-content {
+    margin-left: 0 !important;
     width: 100%;
   }
-  .form .form-row>.form-group,
-  .form .form-row .form-col {
-    width: 100%;
+
+  .form-holder {
+    width: 90%;
   }
 }

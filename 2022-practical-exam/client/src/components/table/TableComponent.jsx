@@ -18,7 +18,7 @@ const TableComponent = ({ headers, data, loading }) => {
         <tbody>
           {!loading &&
             data.map((item, index) => (
-              <React.Fragment key={item.id}>
+              <React.Fragment key={index}>
                 <tr className="space"></tr>
                 <tr key={index}>
                   {Object.values(item).map((value, index) => (

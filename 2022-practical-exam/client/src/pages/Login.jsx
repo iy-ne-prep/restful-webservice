@@ -36,10 +36,10 @@ export const Login = () => {
           password: "",
         });
 
-        const token = response?.data?.data?.access_token
-        localStorage.setItem("token",token)
-        navigate("/dashboard")
-        
+        const token = response?.data?.data?.access_token;
+        localStorage.setItem("token", token);
+        navigate("/dashboard");
+
         setLoading(false);
       } else {
         errorToast(
@@ -63,10 +63,10 @@ export const Login = () => {
 
   return (
     <div className="pb-12">
-      <h1 className="text-xl text-[#092468] font-black text-center my-12">
+      <h1 className="text-xl text-[#2272C3] font-extrabold text-center my-12">
         Vehicle Tracking System
       </h1>
-      <div className="flex flex-col items-center mt-8 border w-[35vw] mx-auto py-8 px-16">
+      <div className="flex flex-col items-center mt-8 border w-full md:w-[35vw] mx-auto py-8 px-16">
         <h1 className="font-black text-black mb-4 text-xl">Login</h1>
         <p className="text-xs font-light text-gray-400 mb-8">
           To start using Vehicle Tracking System, you need to login.
@@ -99,7 +99,7 @@ export const Login = () => {
         </form>
         <p className="mt-4 text-sm">
           Don&rsquo;t have an account?{" "}
-          <Link to="/signup" className="text-[#092468] font-bold">
+          <Link to="/signup" className="text-[#2272C3] font-bold">
             Signup
           </Link>
           .

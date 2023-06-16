@@ -24,7 +24,6 @@ export const SignUp = () => {
       (value) => value !== ""
     );
 
-
     if (!isFormDataFilled) {
       errorToast("All fields are required");
       return;
@@ -68,14 +67,13 @@ export const SignUp = () => {
       [id]: value,
     }));
   };
-  
 
   return (
     <div className="pb-12">
-      <h1 className="text-xl text-[#092468] font-black text-center my-12">
+      <h1 className="text-xl text-[#2272C3] font-extrabold text-center my-12">
         Vehicle Tracking System
       </h1>
-      <div className="flex flex-col items-center mt-8 border w-[35vw] mx-auto py-8 px-16">
+      <div className="flex flex-col items-center mt-8 border w-full md:w-[35vw] mx-auto py-8 px-16">
         <h1 className="font-black text-black mb-4 text-xl">Create account</h1>
         <p className="text-xs font-light text-gray-400 mb-8">
           To start using Vehicle Tracking System, you need to create an account.
@@ -144,7 +142,7 @@ export const SignUp = () => {
         </form>
         <p className="mt-4 text-sm">
           Already have an account?{" "}
-          <Link to="/login" className="text-[#092468] font-bold">
+          <Link to="/login" className="text-[#2272C3] font-bold">
             Login
           </Link>
           .

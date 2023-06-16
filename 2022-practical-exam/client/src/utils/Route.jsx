@@ -29,10 +29,10 @@ export const PublicRoute = ({ element: Component, ...rest }) => {
   );
 };
 
-PublicRoute.propTypes = {
-  element: PropTypes.node.isRequired,
-};
 
+PublicRoute.propTypes = {
+  element: PropTypes.elementType.isRequired,
+};
 PrivateRoute.propTypes = {
-  element: PropTypes.node.isRequired,
+  element: PropTypes.elementType.isRequired,
 };
