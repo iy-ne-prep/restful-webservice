@@ -82,9 +82,12 @@ const Sidebar = () => {
       </div>
       <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
         <div className="sidebar__logo">Vehicle Tracking System</div>
-        <div className="sidebar__sublogo">{`Welcome ${
-          profile?.firstname + " " + profile?.lastname
-        }`}</div>
+        <div className="sidebar__sublogo flex justify-center">
+          Welcome{" "}
+          <span className="px-2 ml-1 py-1 text-white bg-neutral-800">
+            {profile?.firstname + " " + profile?.lastname}
+          </span>
+        </div>
         <div ref={sidebarRef} className="sidebar__menu">
           {sidebarNavItems.map((item, index) => (
             <Link to={item.to} key={index}>

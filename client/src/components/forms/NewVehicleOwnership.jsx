@@ -83,7 +83,6 @@ const NewVehicleOwnership = ({ closeModal }) => {
       }
     } catch (error) {
       errorToast(error?.response?.data?.message || "An error occurred");
-      closeModal();
     }
     setlocalSending(false);
   };
