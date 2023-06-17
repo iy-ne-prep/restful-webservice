@@ -1,30 +1,30 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "A system that helps RRA to track vehicles and their ownership \n\nMade with ❤️ by Nkubito Pacis",
+        "description": "A system that helps RRA to track vehicles and their ownership \n\nMade with ❤️ by Isite Yves",
         "title": "Vehicle Tracking System",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
-            "name": "Nkubito Pacis",
-            "email": "pacisnkubito@gmail.com"
+            "name": "Isite Yves",
+            "email": "yvesisite@gmail.com"
         },
         "version": "1.0.0"
     },
     "tags": [
         {
-            "name": "VEHICLE OPERATIONS",
+            "name": "VEHICLE MODULE",
             "description": "Operations on vehicles"
         },
         {
-            "name": "USER OPERATIONS",
+            "name": "USER MODULE",
             "description": "Operations on users"
         },
         {
-            "name": "OWNER OPERATIONS",
+            "name": "OWNER MODULE",
             "description": "Operations on car owners"
         },
         {
-            "name": "VEHICLE-OWNERSHIP OPERATIONS",
+            "name": "VEHICLE-OWNERSHIP MODULE",
             "description": "Operations on vehicle-ownership"
         }
     ],
@@ -46,7 +46,7 @@
         "/users/login": {
             "post": {
                 "tags": [
-                    "USER OPERATIONS"
+                    "USER MODULE"
                 ],
                 "summary": "Login",
                 "consumes": [
@@ -92,7 +92,7 @@
         "/users/admin/register": {
             "post": {
                 "tags": [
-                    "USER OPERATIONS"
+                    "USER MODULE"
                 ],
                 "summary": "Register",
                 "consumes": [
@@ -154,7 +154,7 @@
         "/users/profile": {
             "get": {
                 "tags": [
-                    "USER OPERATIONS"
+                    "USER MODULE"
                 ],
                 "summary": "Get user profile",
                 "consumes": [
@@ -182,7 +182,7 @@
         "/owners": {
             "get": {
                 "tags": [
-                    "OWNER OPERATIONS"
+                    "OWNER MODULE"
                 ],
                 "summary": "Get Car Owners",
                 "consumes": [
@@ -222,7 +222,7 @@
         "/owners/all": {
             "get": {
                 "tags": [
-                    "OWNER OPERATIONS"
+                    "OWNER MODULE"
                 ],
                 "summary": "Get All Car Owners",
                 "consumes": [
@@ -250,7 +250,7 @@
         "/owners/register": {
             "post": {
                 "tags": [
-                    "OWNER OPERATIONS"
+                    "OWNER MODULE"
                 ],
                 "summary": "Register car owner",
                 "consumes": [
@@ -308,7 +308,7 @@
         "/vehicles/register": {
             "post": {
                 "tags": [
-                    "VEHICLE OPERATIONS"
+                    "VEHICLE MODULE"
                 ],
                 "summary": "Register vehicle",
                 "consumes": [
@@ -366,7 +366,7 @@
         "/vehicles": {
             "get": {
                 "tags": [
-                    "VEHICLE OPERATIONS"
+                    "VEHICLE MODULE"
                 ],
                 "summary": "Get Vehicles",
                 "consumes": [
@@ -406,7 +406,7 @@
         "/vehicles/all": {
             "get": {
                 "tags": [
-                    "VEHICLE OPERATIONS"
+                    "VEHICLE MODULE"
                 ],
                 "summary": "Get All Vehicles",
                 "consumes": [
@@ -434,7 +434,7 @@
         "/vehicle-owners": {
             "get": {
                 "tags": [
-                    "VEHICLE-OWNERSHIP OPERATIONS"
+                    "VEHICLE-OWNERSHIP MODULE"
                 ],
                 "summary": "Get Vehicles Ownerships",
                 "consumes": [
@@ -474,7 +474,7 @@
         "/vehicle-owners/assign/vehicle/{vehicleId}/owner/{ownerId}": {
             "post": {
                 "tags": [
-                    "VEHICLE-OWNERSHIP OPERATIONS"
+                    "VEHICLE-OWNERSHIP MODULE"
                 ],
                 "summary": "Assign vehicle to owner",
                 "consumes": [
