@@ -79,7 +79,6 @@ const NewVehicleOwnership = ({ closeModal }) => {
           response?.data?.message ||
             "Error occurred while linking the owner to the vehicle"
         );
-        closeModal();
       }
     } catch (error) {
       errorToast(error?.response?.data?.message || "An error occurred");

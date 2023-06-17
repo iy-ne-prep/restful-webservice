@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const API_URL = 'http://localhost:4000';
 
-export const API_DATA_LIMIT=3;
+export const API_DATA_LIMIT = 4;
 
 export const sendRequest = async (api, method, payload = {}) => {
   const token = localStorage.getItem('token');

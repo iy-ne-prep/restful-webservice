@@ -32,11 +32,9 @@ const NewOwner = ({ closeModal }) => {
         errorToast(
           response?.data?.message || "Error occurred while registering"
         );
-        closeModal();
       }
     } catch (error) {
       errorToast(error?.response?.data?.message || "An error occurred");
-      closeModal();
     }
     setlocalSending(false);
   };

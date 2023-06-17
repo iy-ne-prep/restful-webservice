@@ -66,7 +66,7 @@ export const getVehicleOwners = async (req, res) => {
     const returnObject = {
       data: docs,
       currentPage: options.page,
-      totalPages: totalPages,
+      totalPages,
       totalData: totalDocs,
     };
 
